@@ -1,4 +1,7 @@
 class TodosController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
     #render plain: "Hello, this is /todos!"
     #render plain: "Hello to Rails! #{DateTime.now.to_s(:short)}"
