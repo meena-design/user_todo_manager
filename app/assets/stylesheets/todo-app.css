@@ -26,14 +26,18 @@ body{
   align-items: stretch;
 
 }
+.StrikeTodo
+{
+  text-decoration: line-through;
+}
 .TodoSection
 {
 
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-
 }
+
 .AddTodo-text
 {
 padding: 6px 6px;
