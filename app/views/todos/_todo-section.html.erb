@@ -1,0 +1,27 @@
+<section class="TodoSection">
+       <div class="TodoSectionTitle">
+          <p class="TodoSectionTitle-text"><%= section_title %></p>
+          <p class="TodoSectionTitle-remainingCount"><%= todos.completed.count %> / <%= todos.count %> </p>
+        </div>
+        <ul>
+        <% todos.each do |todo| %>
+         <li class="TodoItem">
+            <div class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              <%= todo.todo_text %>
+              <% if show_due_date %>
+              <p class="TodoItem-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
+              <% end %>
+            </div>
+            <!-- <p class="TodoItem-overdueLabel">Overdue</p> -->
+           <svg style="width:18px;height:18px" viewBox="0 0 24 24" class="TodoItem__DeleteButton">
+              <path fill="currentColor"
+                d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+            </svg>
+            <!-- <a href="javascript:void(0) class="TodoItem__DeleteButton">
+            <img src="trash2.png">
+            </a> -->
+          </li>
+        <% end %>
+        </ul>
+</section>

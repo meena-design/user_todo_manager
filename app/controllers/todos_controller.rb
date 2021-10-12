@@ -6,12 +6,16 @@ class TodosController < ApplicationController
     #render plain: "Hello, this is /todos!"
     #render plain: "Hello to Rails! #{DateTime.now.to_s(:short)}"
     #render plain: Todo.all.to_a
-    render plain:Todo.order(:due_date).map { |todo| todo.to_pleasant_string }.join("\n")
+    #render plain:Todo.order(:due_date).map { |todo| todo.to_pleasant_string }.join("\n")
+    render "index"
   end
   def show
     id = params[:id]
     todo = Todo.find(id)
-    render plain: todo.to_pleasant_string
+    #render plain: todo.to_pleasant_string
+    render "todo"
+    # render todo show s a single todo from todo.html.erb
+    # even in this page also we see header and footer
   end
   def create
     todo_text = params[:todo_text]
