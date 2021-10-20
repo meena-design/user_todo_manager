@@ -26,6 +26,10 @@ body{
   align-items: stretch;
 
 }
+.TodoItem-completedText
+{
+  text-decoration: line-through;
+}
 .StrikeTodo
 {
   text-decoration: line-through;
