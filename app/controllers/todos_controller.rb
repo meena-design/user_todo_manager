@@ -35,7 +35,13 @@ class TodosController < ApplicationController
     todo.completed = completed
     todo.save!
     #render plain:"Updated to do completed status #{completed}"
-
     redirect_to todos_path
   end
+  def destroy
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.destroy
+    redirect_to todos_path
+  end
+
 end

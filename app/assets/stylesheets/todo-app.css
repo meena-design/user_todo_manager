@@ -90,6 +90,8 @@ align-items: center;
 .TodoItem__DeleteButton {
   visibility: hidden;
   cursor: pointer;
+  margin-left: 10px;
+
 }
 
 .TodoItem:hover .TodoItem__DeleteButton {
@@ -98,6 +100,7 @@ align-items: center;
 
 .TodoItem-container:hover{
   align-items: center;
+
 }
 .TodoItem-delete > img {
   width: 16px;
