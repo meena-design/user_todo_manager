@@ -3,35 +3,32 @@
           <p class="TodoSectionTitle-text"><%= section_title %></p>
           <p class="TodoSectionTitle-remainingCount"><%= todos.completed.count %> / <%= todos.count %> </p>
         </div>
+
         <ul>
-        <% todos.each do |todo| %>
-         <li class="TodoItem">
-            <div class="TodoItem-container">
+          <% todos.each do |todo| %>
+            <li class="TodoItem">
+                <div class="TodoItem-container">
+                  <%= form_with(url: "todos/#{todo.id}", method: "put") do %>
+                  <input
+                    class="TodoItem-checkbox"
+                    name="completed"
+                    type="checkbox" <%= todo.completed ? "checked" : "" %>
+                    onclick="this.form.submit();"
+                  />
+                  <% end %>
+                  <p class='<%= todo.completed ? "TodoItem-completedText" : "" %>' >
+                      <%= todo.todo_text %>
+                  </p>
+                  <% if show_due_date %>
+                      <p class="TodoItem-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
+                  <% end %>
 
-            <%= form_with(url: "todos/#{todo.id}", method: "put") do %>
-              <input
-              class="TodoItem-checkbox"
-              name="completed"
-              type="checkbox" <%= todo.completed ? "checked" : "" %>
-              onclick="this.form.submit()"
-              />
-
-              <% end %>
-
-            <p class='<%= todo.completed ? "TodoItem-completedText" : "" %>' >
-            <%= todo.todo_text %>
-            </p>
-
-            <% if show_due_date %>
-              <p class="TodoItem-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
-              <% end %>
-
-            <a href="javascript:void(0)" class="TodoItem__DeleteButton">
-            <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
-             <input type="image" src="assets/delete2.png" height="15" width="15" />
-            <% end %>
-            </a>
-            </div>
+                    <a href="javascript:void(0)" class="TodoItem__DeleteButton">
+                        <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
+                        <%= image_tag("delete2.png", height: "15", width: "15") %>
+                        <% end %>
+                    </a>
+              </div>
             </li>
         <% end %>
         </ul>
