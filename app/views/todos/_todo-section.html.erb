@@ -25,7 +25,16 @@
 
                     <a href="javascript:void(0)" class="TodoItem__DeleteButton">
                         <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
-                        <%= image_tag("delete2.png", height: "15", width: "15") %>
+                      <!-- <input
+                        type="image"
+                        src= <%= image_tag("delete2.png", height: "15", width: "15") do %>
+                        />
+                        <% end %>
+
+                       <%= image_tag("delete2.png", height: "15", width: "15") %> -->
+                       <%= image_submit_tag("delete2.png", height: "15", width: "15") do %>
+                       <% end %>
+
                         <% end %>
                     </a>
               </div>
