@@ -1,7 +1,5 @@
 class TodosController < ApplicationController
-
   #skip_before_action :verify_authenticity_token
-
   def index
     #render plain: "Hello, this is /todos!"
     #render plain: "Hello to Rails! #{DateTime.now.to_s(:short)}"
@@ -26,7 +24,6 @@ class TodosController < ApplicationController
     #response_text="Hey , Your new todo is Created with the id #{new_to_do.id}"
     #render plain:response_text
     redirect_to todos_path
-
   end
   def update
     id = params[:id]
