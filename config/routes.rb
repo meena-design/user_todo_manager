@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :todos
-  #resources :users
+
+
   get "/" => "home#index"
+  resources :todos
+  resources :users
   #post "/users/login", to:"users#login"
+  #resources :users
 end

@@ -1,6 +1,7 @@
 require 'active_record'
 class User < ActiveRecord::Base
-  def to_display_string
-    "#{id}. #{name} #{email} #{password}"
-  end
+  #self.abstract_class = true
+  has_secure_password
+  has_many :todos
+  # the above clause means one user can have many todos
 end

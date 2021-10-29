@@ -3,6 +3,12 @@ require "active_record"
 
 class Todo < ActiveRecord::Base
 
+  belongs_to :user
+  # table called "users"
+  # todos table will contain "user_id"
+  # when the above two conditions are met we can write belongs_to : user
+
+
   def self.overdue
     all.where("completed = ? and due_date < ? ",false,Date.today)
     #all.where("due_date < ?",Date.today)
