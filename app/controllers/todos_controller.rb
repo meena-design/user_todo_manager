@@ -6,11 +6,12 @@ class TodosController < ApplicationController
     #render plain: Todo.all.to_a
     #render plain:Todo.order(:due_date).map { |todo| todo.to_pleasant_string }.join("\n")
 
+    @todos = Todo.of_user(current_user)
     render "index"
   end
   def show
     id = params[:id]
-    todo = Todo.find(id)
+    todo = Todo.of_user(current_user).find(id)
     #render plain: todo.to_pleasant_string
     render "todo"
     # render todo show s a single todo from todo.html.erb
@@ -21,7 +22,8 @@ class TodosController < ApplicationController
     due_date = DateTime.parse(params[:due_date])
     new_to_do =  Todo.create!(todo_text: todo_text,
       due_date: due_date,
-      completed: false)
+      completed: false,
+    user_id: current_user.id)
     #response_text="Hey , Your new todo is Created with the id #{new_to_do.id}"
     #render plain:response_text
     redirect_to todos_path
@@ -29,15 +31,14 @@ class TodosController < ApplicationController
   def update
     id = params[:id]
     completed = params[:completed]
-    todo = Todo.find(id)
+    todo =Todo.of_user(current_user).find(id)
     todo.completed = completed
     todo.save!
-    #render plain:"Updated to do completed status #{completed}"
     redirect_to todos_path
   end
   def destroy
     id = params[:id]
-    todo = Todo.find(id)
+    todo =Todo.of_user(current_user).find(id)
     todo.destroy
     redirect_to todos_path
   end

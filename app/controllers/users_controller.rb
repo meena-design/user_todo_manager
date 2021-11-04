@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   #skip_before_action :verify_authenticity_token
+  skip_before_action :ensure_user_logged_in
   def new
     render "users/new"
   end
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
       password: params[:password]
     )
       #password_digest: digest(params[:password])
+      #session[:current_user_id] = user.id
       redirect_to "/"
   end
   #def login
