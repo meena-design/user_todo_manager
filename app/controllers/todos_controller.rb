@@ -5,6 +5,7 @@ class TodosController < ApplicationController
     #render plain: "Hello to Rails! #{DateTime.now.to_s(:short)}"
     #render plain: Todo.all.to_a
     #render plain:Todo.order(:due_date).map { |todo| todo.to_pleasant_string }.join("\n")
+
     render "index"
   end
   def show
