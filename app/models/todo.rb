@@ -3,6 +3,9 @@ require "active_record"
 
 class Todo < ActiveRecord::Base
 
+  validates :todo_text, presence: true
+  validates :due_date, presence: true
+  validates :todo_text, length: { minimum: 2 }
   belongs_to :user
   # table called "users"
   # todos table will contain "user_id"
