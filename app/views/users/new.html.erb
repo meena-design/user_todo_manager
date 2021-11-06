@@ -1,24 +1,31 @@
 <p class="NewUsers-title">Welcome new user</p>
 <section class="UsersNew">
-    <%= form_with url: users_path do |form| %>
+    <%= form_with(url: "/users", method: "post") do %>
         <div class="Form-section">
-            <p class="FormInput-label">First name: </p>
-                <%= form.text_field :first_name, class: "Form-input" %>
+            <p class="Input-label">First name: </p>
+                <%= text_field_tag "first_name", nil, autofocus: true,
+                                                      placeholder: "First Name",
+                                                      class: "Form-Input" %>
         </div>
         <div class="Form-section">
-            <p class="FormInput-label">Last name: </p>
-                <%= form.text_field :last_name, class: "Form-input" %>
+            <p class="Input-label">Last name: </p>
+            <%= text_field_tag "last_name", nil, autofocus: true,
+                                                 placeholder: "Last Name",
+                                                 class: "Form-Input" %>
+
         </div>
         <div class="Form-section">
-            <p class="FormInput-label">Email ID: </p>
-                <%= form.email_field :email, class: "Form-input" %>
+            <p class="Input-label">Email ID: </p>
+                <%= text_field_tag "email", nil, autofocus: true,
+                                                 placeholder: "email",
+                                                 class: "Form-Input" %>
         </div>
         <div class="Form-section">
-            <p class="FormInput-label">Password : </p>
-                <%= form.password_field :password, class: "Form-input" %>
+            <p class="Input-label">Password : </p>
+                <%= password_field_tag "password", class: "Form-input" %>
         </div>
         <div class="Form-section">
-            <%= form.submit "Sign-up!", class: "Form-submit" %>
+            <%= submit_tag "Sign-up!", class: "Form-submit" %>
         </div>
     <% end %>
 </section>

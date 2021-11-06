@@ -11,22 +11,20 @@
   </head>
 
   <body>
-  <!-- the below line is a header for every page
-  <h1 style="background-color: darkblue; color: white;">The Todo Application</h1> -->
   <% if @current_user %>
-  <p class="UserHeader">
-    Welcome <%= @current_user.first_name %>
-    <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
-  </p>
+      <p class="UserHeader">
+          Welcome <%= @current_user.first_name %>
+          <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
+      </p>
   <% end %>
   <% if flash[:error] %>
-<p class="Flash-error">
-  <%= flash[:error] %>
-  </p>
+        <p class="Flash-error">
+            <%= flash[:error] %>
+        </p>
   <% end %>
-    <%= yield %>
-  <!-- the below line is a footer
-  <hr>
-  <p style="font-size: 32px;"> TodoManager App (C) The Todo Company </p> -->
+<% if flash[:success] %>
+  <p class="Flash-success"> <%= flash[:success] %> </p>
+<% end %>
+  <%= yield %>
   </body>
 </html>

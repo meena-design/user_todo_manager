@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   skip_before_action :ensure_user_logged_in
   def new
     render "users/new"
@@ -11,15 +10,12 @@ class UsersController < ApplicationController
       email: params[:email],
       password: params[:password]
     )
-
       if new_user.save
         redirect_to todos_path
+        flash[:success] = "you've signed-up successfully, now please sign-in to continue"
       else
         flash[:error] = new_user.errors.full_messages.join(", ")
         redirect_to "/"
       end
-
   end
-
-
 end
