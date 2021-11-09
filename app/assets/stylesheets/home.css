@@ -1,16 +1,13 @@
-.Home-title
-{
+.Home-title  {
     font-size: 20px;
     margin-bottom: 30px;
 
 }
-.Home-authenticate
-{
-margin-bottom: 20px;
-font-size: 16px;
+.Home-authenticate {
+    margin-bottom: 20px;
+    font-size: 16px;
 }
-.UserHeader
-{
+.UserHeader {
     padding:10px;
     background-color:lemonchiffon;
     font-size: 14px;
@@ -20,15 +17,13 @@ font-size: 16px;
     justify-content: space-between;
 
 }
-.Flash-error
-{
-color: darkred;
-margin-bottom: 20px;
-font-size: 16px;
+.Flash-error {
+    color: darkred;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
-.Flash-success
-{
-color:navy;
-margin-bottom: 20px;
-font-size: 16px;
+.Flash-success {
+    color:navy;
+    margin-bottom: 20px;
+    font-size: 16px;
 }

@@ -2,8 +2,8 @@ class SessionsController  < ApplicationController
     skip_before_action :ensure_user_logged_in
 
     def new
-        # by default it will render index page
     end
+
     def create
         user=User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
@@ -15,11 +15,10 @@ class SessionsController  < ApplicationController
 
         end
     end
+
     def destroy
         session[:current_user_id] = nil
         @current_user = nil
         redirect_to "/"
     end
-
-
 end

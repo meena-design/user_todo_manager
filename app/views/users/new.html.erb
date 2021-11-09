@@ -2,28 +2,39 @@
 <section class="UsersNew">
     <%= form_with(url: "/users", method: "post") do %>
         <div class="Form-section">
-            <p class="Input-label">First name: </p>
-                <%= text_field_tag "first_name", nil, autofocus: true,
-                                                      placeholder: "First Name",
-                                                      class: "Form-Input" %>
+            <p class="Input-label">
+                 First name:
+            </p>
+            <%= text_field_tag "first_name", nil,
+                               placeholder: "First Name",
+                               class: "Form-Input" %>
         </div>
-        <div class="Form-section">
-            <p class="Input-label">Last name: </p>
-            <%= text_field_tag "last_name", nil, autofocus: true,
-                                                 placeholder: "Last Name",
-                                                 class: "Form-Input" %>
 
-        </div>
         <div class="Form-section">
-            <p class="Input-label">Email ID: </p>
-                <%= text_field_tag "email", nil, autofocus: true,
-                                                 placeholder: "email",
-                                                 class: "Form-Input" %>
+            <p class="Input-label">
+                Last name:
+            </p>
+            <%= text_field_tag "last_name", nil,
+                               placeholder: "Last Name",
+                               class: "Form-Input" %>
         </div>
+
         <div class="Form-section">
-            <p class="Input-label">Password : </p>
-                <%= password_field_tag "password", class: "Form-input" %>
+            <p class="Input-label">
+                Email ID:
+            </p>
+            <%= text_field_tag "email", nil,
+                               placeholder: "email",
+                               class: "Form-Input" %>
         </div>
+
+        <div class="Form-section">
+            <p class="Input-label">
+                Password :
+            </p>
+            <%= password_field_tag "password", class: "Form-input" %>
+        </div>
+
         <div class="Form-section">
             <%= submit_tag "Sign-up!", class: "Form-submit" %>
         </div>

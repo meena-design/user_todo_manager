@@ -19,31 +19,24 @@ body{
   margin-bottom: 20px;
 
 }
-.AddTodo
-{
+.AddTodo {
   display: flex;
   height: 25px;
   align-items: stretch;
 
 }
-.TodoItem-completedText
-{
+.TodoItem-completedText {
   text-decoration: line-through;
 }
-.StrikeTodo
-{
+.StrikeTodo {
   text-decoration: line-through;
 }
-.TodoSection
-{
-
+.TodoSection {
   margin: 0 auto;
   align-items: center;
   justify-content: center;
 }
-
-.AddTodo-text
-{
+.AddTodo-text {
 padding: 6px 6px;
 font-size: 14px;
 color:#453C52;
@@ -51,8 +44,7 @@ margin-right: 10px;
 border-radius: 4px;
 border: 1px solid #BFB8CC;
 }
-.AddTodo-date
-{
+.AddTodo-date {
   padding: 6px;
   font-size: 14px;
   color: #453C52;
@@ -60,8 +52,7 @@ border: 1px solid #BFB8CC;
   border-radius: 4px;
   border:1px solid #BFB8CC;
 }
-.AddTodo-button
-{
+.AddTodo-button {
   font-size: 14px;
   color:white;
   background-color: #48BB78;
@@ -79,8 +70,7 @@ margin-bottom: 8px;
   background-color: lightgray;
   cursor: pointer;
 }
-.TodoItem-dueDate
-{
+.TodoItem-dueDate {
 font-size: 10px;
 font-weight: 600;
 color:#2a2d33;
@@ -91,16 +81,12 @@ align-items: center;
   visibility: hidden;
   cursor: pointer;
   margin-left: 10px;
-
 }
-
 .TodoItem:hover .TodoItem__DeleteButton {
   visibility: visible;
 }
-
 .TodoItem-container:hover{
   align-items: center;
-
 }
 .TodoItem-delete > img {
   width: 16px;
