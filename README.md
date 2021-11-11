@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # user_todo_manager
+# newuser_todo_manager
