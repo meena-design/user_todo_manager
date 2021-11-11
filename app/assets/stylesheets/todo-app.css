@@ -59,6 +59,7 @@ border: 1px solid #BFB8CC;
   border: 1px solid transparent;
   padding : 6px 22px;
   border-radius: 4px;
+  cursor: pointer;
 }
 .TodoSectionTitle-remainingCount{
 font-size: 12px;

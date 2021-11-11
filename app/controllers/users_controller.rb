@@ -15,7 +15,8 @@ class UsersController < ApplicationController
         flash[:success] = "you've signed-up successfully, now please sign-in to continue"
       else
         flash[:error] = new_user.errors.full_messages.join(", ")
-        redirect_to "/"
+        redirect_to "/users/new"
+
       end
   end
 end
