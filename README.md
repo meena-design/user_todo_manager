@@ -24,3 +24,6 @@ Things you may want to cover:
 * ...
 # user_todo_manager
 # newuser_todo_manager
+# The Project is a Todo Manager . Has the features to add new todo , and view the todos # completed , pending . Facilitates to delete a todo also .
+# User can signup the form . once the user is create the user can sign in to view
+# their own todo manager
