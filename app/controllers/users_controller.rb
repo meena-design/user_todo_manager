@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_logged_in
-  validates :email, { presence: true, uniqueness: true }
 
   def new
     render "users/new"
